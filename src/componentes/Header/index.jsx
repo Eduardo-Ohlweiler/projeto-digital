@@ -6,7 +6,6 @@ import "./index.css"
 import { useContext } from 'react';
 import { AuthContext } from '../produtosContext/ProdutosContext';
 
-
 export const Header = () => {
     const  menuNavegacao = [
         "Home",
@@ -16,6 +15,9 @@ export const Header = () => {
     ];
 
     const { pesquisarProdutos  } = useContext(AuthContext);
+    const nomeaPesquisar = (e) => {
+        pesquisarProdutos(e.target.value);
+    };
 
     return (
         <header>
@@ -26,7 +28,7 @@ export const Header = () => {
                     <li className='campoPesquisa'>
                         <form action="">
                             <input
-                            onChange={(e) => pesquisarProdutos(e)}
+                            onChange={(e) => nomeaPesquisar(e)}
                             type="text" placeholder='Pesquisar produto...'/>
                             <button type="submit" className= "lupa"><img src={search} alt="lupa" /></button>
                         </form>

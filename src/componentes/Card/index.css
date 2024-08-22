@@ -1,0 +1,34 @@
+
+#liCard {
+    height: 439px;
+    width: 292px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#cardButton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: start;
+    align-items: start;
+    gap: none;
+}
+
+.imagem {
+    height: 321px;
+    width: 292px;
+}
+
+.palavras {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+    padding-left: 3px;
+    position: absolute;
+    top: 295px;
+}
+
+

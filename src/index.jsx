@@ -15,8 +15,8 @@ root.render(
     <AuthProvider>
       <GlobalStyle/>
       <Header/>
-      <Footer/>
       <App />
+      <Footer/>
     </AuthProvider>
     
   </React.StrictMode>
