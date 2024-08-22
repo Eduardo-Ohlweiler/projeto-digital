@@ -9,32 +9,38 @@ const AuthProvider = ({children}) => {
     
     //armazenar os produtos
     const [products, setProducts] = useState([]);
+    //armazenar produtos filtrados
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
     //armazenar produtos do carrinho
     const [currentSale, setCurrentSale] = useState([]);
 
     useEffect(() => {
-        setProducts(Data)
+        setProducts(Data);
+        setFilteredProducts(Data);
     }, []);
+    
 
     //pesquisar produtos
     const pesquisarProdutos = (value) => {
-        if(!value) {
-            setProducts(Data);
+        if (!value) {
+            setFilteredProducts(Data);
             return;
         }
-    const produtosFiltrados = products.filter((elemento) =>
-        elemento.name.toLowerCase().includes(value.toLowerCase())
-    );
-    setProducts(produtosFiltrados);
+        const searchValue = String(value).toLowerCase();
+        const produtosFiltrados = Data.filter((elemento) =>
+            elemento.modelo.toLowerCase().includes(searchValue)
+        );
+        setFilteredProducts(produtosFiltrados);
     };
 
+    
+    //adicionar produtos e verificar se o produto já está no carrinho
     const addProduct = (productId) => {
-        //verificar se o produto ja ta no carrinho
         const product = currentSale.find(
             (elementoNoCarrinho) => elementoNoCarrinho.id === productId
         );
-        //se não tiver eu adiciono, se tiver incremento
+        //se não tiver, adiciona; se tiver, incrementa
 
         if(product) {
             const newProduct = currentSale.map((elementoNoCarrinho) => {
@@ -45,30 +51,30 @@ const AuthProvider = ({children}) => {
             });
             setCurrentSale(newProduct);
             toast.dismiss();
-            toast.dismiss();
-            toast.success('Produto adicionado com sucesso')
+            toast.success('Produto adicionado com sucesso');
         } else {
             //verificando se existe no carrinho
-            const product = products.filter((item) => item.id === productId);
-            const currentProduct = {...product[0], amount: 1};
+            const product = products.find((item) => item.id === productId);
+            const currentProduct = {...product, amount: 1};
             setCurrentSale([...currentSale, currentProduct]);
-            toast.success("Produto adicionado com sucesso")
+            toast.success("Produto adicionado com sucesso");
         }
     };
 
     return (
         <AuthContext.Provider
             value={{
-                products,
+                products: filteredProducts, // Usa produtos filtrados no componente
                 pesquisarProdutos,
                 addProduct,
                 setCurrentSale,
                 currentSale,
                 setProducts
             }}
-        > {children}
+        > 
+            {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
 
 export default AuthProvider;

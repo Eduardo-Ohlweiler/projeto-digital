@@ -1,0 +1,13 @@
+.sectionProdutos {
+    padding: 40px 100px 15px 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F5F5;
+}
+
+.ulCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
