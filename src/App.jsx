@@ -1,13 +1,11 @@
-import { ToastContainer } from "react-toastify";
-import "react-toastify/ReactToastify.css"
-import { Produtos } from "./componentes/Produtos";
+import "react-toastify/ReactToastify.css";
 
+import AppRoutes from "./componentes/router/router.jsx";
 
 function App() {
   return (
     <>
-      <ToastContainer/>
-      <Produtos/>
+      <AppRoutes />
     </>
   );
 }

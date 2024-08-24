@@ -56,6 +56,10 @@ header {
     width: 20px;
  }
 
+ a {
+    font-family: "inter", sans-serif;
+ }
+
  @media (min-width: 650px) {
     #botaomenu {
         display: none;

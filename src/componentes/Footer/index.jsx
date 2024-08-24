@@ -10,9 +10,9 @@ const Footer = () => {
       <section className="info">
         <ul className="apresentacao">
           <li>
-            <h1>
+            <h2>
               <img src={logoBranco} alt="logo digital branca" />
-            </h1>
+            </h2>
           </li>
           <li>
             {" "}

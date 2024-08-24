@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.produto {
+  display: flex;
+  flex-direction: column;
+}
+
+.produto h1 {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  width: 1200px;
+  height: 200px;
+}
