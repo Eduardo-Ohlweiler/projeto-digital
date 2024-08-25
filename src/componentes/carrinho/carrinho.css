@@ -1,0 +1,23 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  outline: 0;
+}
+
+
+.carrinho {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carrinho h1 {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    width: 1200px;
+    height: 200px;
+  }

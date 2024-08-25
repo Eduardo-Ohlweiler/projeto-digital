@@ -5,6 +5,7 @@ import menuicon from "../../assets/img/menuicon.jpeg";
 import "./index.css";
 import { useContext } from "react";
 import { AuthContext } from "../produtosContext/ProdutosContext";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const menuNavegacao = [
@@ -52,7 +53,9 @@ export const Header = () => {
               Entrar
             </button>
           </li>
-          <img className="carrinho" src={carrinho} alt="" />
+          <Link to="/Carrinho">
+            <img className="carrinho" src={carrinho} alt="" />
+          </Link>
         </ul>
       </section>
       <section className="navSection">
